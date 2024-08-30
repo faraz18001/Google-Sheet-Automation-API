@@ -95,7 +95,7 @@ The API provides meaningful error messages for common issues such as invalid JSO
 
 Here is a mind map representing the structure and flow of the application:
 
-```mermaid
+mermaid
 mindmap
   root((Flask Google Sheets API))
     API
