@@ -91,41 +91,8 @@ This project provides a Flask-based API to receive JSON data via a POST request 
 
 The API provides meaningful error messages for common issues such as invalid JSON format, missing credentials, or Google Sheets errors.
 
-## Mind Map
-
-Here is a mind map representing the structure and flow of the application:
-
-mermaid
-mindmap
-  root((Flask Google Sheets API))
-    API
-      Endpoint(/update_sheet)
-        Request(POST)
-        Response(200 OK, 400 Bad Request, 500 Error)
-    Google Sheets
-      Integration
-        Credentials(OAuth2)
-        Library(gspread)
-        Actions
-          - Append Row
-          - Insert Header
-          - Format Cells
-    Flask App
-      Modules
-        - Flask
-        - gspread
-        - oauth2client
-      Functions
-        - get_worksheet()
-        - update_sheet()
-```
-
 ## Contributing
 
 Feel free to submit pull requests or open issues to improve the project.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-```
 
