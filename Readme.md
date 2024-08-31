@@ -3,14 +3,14 @@
 This awesome project provides a Flask-based API to receive JSON data via a POST request and update a Google Sheet with the data. It leverages the `gspread` library to interact with Google Sheets and uses OAuth2 for authentication. Let's get started! 🎉
 
 ## 📋 Table of Contents
-- [🛠️ Installation](#installation)
-- [🚀 Usage](#usage)
-- [🔌 API Endpoint](#api-endpoint)
-- [📈 Google Sheets Setup](#google-sheets-setup)
-- [🔐 Environment Variables](#environment-variables)
-- [🐛 Error Handling](#error-handling)
-- [🧠 Mind Map](#mind-map)
-- [🤝 Contributing](#contributing)
+- [🛠️ Installation](#%EF%B8%8F-installation)
+- [🚀 Usage](#-usage)
+- [🔌 API Endpoint](#-api-endpoint)
+- [📈 Google Sheets Setup](#-google-sheets-setup)
+- [🔐 Environment Variables](#-environment-variables)
+- [🐛 Error Handling](#-error-handling)
+- [🧠 Project Workflow](#-project-workflow)
+- [🤝 Contributing](#-contributing)
 
 ## 🛠️ Installation
 
@@ -90,18 +90,31 @@ Make sure to set the following environment variables:
 
 The API provides meaningful error messages for common issues such as invalid JSON format, missing credentials, or Google Sheets errors. We've got you covered! 🛡️
 
-## 🧠 Mind Map
+## 🧠 Project Workflow
 
-Here's a mind map showing the workflow of this project:
+Here's a simple flowchart showing the core workflow of this project:
 
-<antArtifact identifier="project-workflow-mindmap" type="application/vnd.ant.mermaid" title="Project Workflow Mind Map">
-graph TD
-    A[Client] -->|POST Request| B(Flask API)
-    B --> C{Validate JSON}
-    C -->|Valid| D[Process Data]
-    C -->|Invalid| E[Return 400 Error]
-    D --> F{Update Google Sheet}
-    F -->|Success| G[Return 200 OK]
-    F -->|Failure| H[Return 500 Error]
-    I[Google Sheets API] --> F
-    J[OAuth2 Authentication] --> I
+```
++----------+     +-----------+     +------------------+
+|  Client  | --> | Flask API | --> | Validate JSON    |
++----------+     +-----------+     +------------------+
+                                            |
+                                            v
++----------+     +-----------------+     +------------------+
+| Response | <-- | Update G. Sheet | <-- | Process Data     |
++----------+     +-----------------+     +------------------+
+```
+
+This flowchart illustrates the basic flow of data through the application:
+
+1. The client sends a POST request to the Flask API.
+2. The API receives the request and validates the JSON data.
+3. If valid, it processes the data.
+4. The processed data is used to update the Google Sheet.
+5. Finally, it returns a response to the client.
+
+## 🤝 Contributing
+
+Feel free to submit pull requests or open issues to improve the project. We welcome your contributions! 🙌
+
+Happy coding! 💻✨
